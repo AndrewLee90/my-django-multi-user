@@ -29,45 +29,21 @@
 
 ### 단계
 1. **저장소 클론**:
-   ```bash
+   ```
    git clone https://github.com/AndrewLee90/my-django-multi-user.git
    cd my-django-multi-user
 가상환경 설정:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 의존성 설치:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 pip install -r requirements.txt
 마이그레이션 적용:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3 manage.py migrate
 서버 실행:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3 manage.py runserver
 브라우저에서 http://127.0.0.1:8000/ 접속.
 클라우드 서버 배포 (CentOS 8)
@@ -76,82 +52,34 @@ python3 manage.py runserver
 방화벽: firewalld 활성화 및 포트 8000 열기
 단계
 서버 접속:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 ssh student@223.130.130.225
 Python 3.6 설치 확인:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3.6 --version  # 없으면 yum install python36
 프로젝트 클론:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 git clone https://github.com/AndrewLee90/my-django-multi-user.git
 cd my-django-multi-user
 가상환경 및 의존성:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3.6 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 설정 수정:
 django_school/settings.py:
-python
 
-Collapse
-
-Wrap
-
-Copy
 ALLOWED_HOSTS = ['223.130.130.225', '127.0.0.1']
 마이그레이션:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3.6 manage.py migrate
 방화벽 설정:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 sudo systemctl start firewalld
 sudo firewall-cmd --add-port=8000/tcp --permanent
 sudo firewall-cmd --reload
 서버 실행:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 python3.6 manage.py runserver 0.0.0.0:8000
 http://223.130.130.225:8000/ 접속.
 주요 URL
@@ -190,13 +118,7 @@ Copy
    ```bash
    nano README.md
 깃허브에 푸시:
-bash
 
-Collapse
-
-Wrap
-
-Copy
 git add README.md
 git commit -m "Add project summary to README"
 git push origin main
@@ -205,12 +127,4 @@ https://github.com/AndrewLee90/my-django-multi-user에서 README.md 렌더링 �
 커스터마이징 제안
 프로젝트 설명: 당신이 추가한 기능(예: 전화번호 필드)이 있다면 "주요 기능"에 추가.
 스크린샷: 홈페이지나 퀴즈 페이지 캡처를 추가.
-markdown
 
-Collapse
-
-Wrap
-
-Copy
-![홈페이지](screenshot.png)
-배포 세부사항: Gunicorn 등 사용 계획 있다면 추가.
